@@ -1,11 +1,7 @@
 FROM buildpack-deps:jessie
 
 # skip installing gem documentation
-RUN mkdir -p /usr/local/etc \
-	&& { \
-		echo 'install: --no-document'; \
-		echo 'update: --no-document'; \
-	} >> /usr/local/etc/gemrc
+RUN mkdir -p /usr/local/etc
 
 ENV RUBY_MAJOR 2.3
 ENV RUBY_VERSION 2.3.0
